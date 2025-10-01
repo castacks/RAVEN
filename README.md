@@ -21,4 +21,9 @@
     <a href="https://theairlab.org/team/sebastian/" target="_blank"><strong>Sebastian Scherer</strong></a>
     <br>
   </p>
-Stay tuned for code release!
+</p>
+  <h3 align="center"><a href="https://arxiv.org/pdf/2509.23563">Paper</a> | <a href="https://raven-semantic.github.io/">Project Page</a> | <a href="">Video</a></h3>
+  <div align="center"></div>
+
+## News/Release
+09/28/2025: arXiv paper is uploaded. Stay tuned for code release!
