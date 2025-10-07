@@ -6,7 +6,7 @@
 <p align="center">
     <a href="https://seungchan-kim.github.io" target="_blank"><strong>Seungchan Kim</strong></a>
     ·
-    <a href="https://www.linkedin.com/in/omaralama/" target="_blank"><strong>Omar Alama</strong></a>
+    <a href="https://oasisartisan.github.io" target="_blank"><strong>Omar Alama</strong></a>
     ·
     <a href="https://scholar.google.com/citations?user=91gM0vQAAAAJ&hl=en&oi=ao"><strong>Dmytro Kurdydyk</strong></a>
     ·
