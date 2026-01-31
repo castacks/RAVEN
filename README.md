@@ -26,6 +26,6 @@
   <div align="center"></div>
 
 ## News/Release
-01/31/2026: RAVEN was accepted to IEEE ICRA 2026! See you at Vienna!
-10/25/2025: RAVEN was presented at IROS 2025 Active Perception Workshop, and received Oustanding Best Paper Award Finalist!
-09/28/2025: arXiv paper is uploaded. Stay tuned for code release!
+- 01/31/2026: RAVEN was accepted to IEEE ICRA 2026!
+- 10/25/2025: RAVEN was presented at IROS 2025 Active Perception Workshop, and received Oustanding Best Paper Award Finalist!
+- 09/28/2025: arXiv paper is uploaded. Stay tuned for code release!
