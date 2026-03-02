@@ -1,7 +1,7 @@
 <p align="center">
 <h1 align="center">RAVEN: Resilient Aerial Navigation via Open-Set Semantic Memory and Behavior Adaptation</h1>
 <h3 class="is-size-5 has-text-weight-bold" style="color: orange;" align="center">
-    Under Review 
+    IEEE International Conference on Robotics and Automation (ICRA) 2026
 </h3>
 <p align="center">
     <a href="https://seungchan-kim.github.io" target="_blank"><strong>Seungchan Kim</strong></a>
@@ -29,3 +29,5 @@
 - 01/31/2026: RAVEN was accepted to IEEE ICRA 2026!
 - 10/25/2025: RAVEN was presented at IROS 2025 Active Perception Workshop, and received Oustanding Best Paper Award Finalist!
 - 09/28/2025: arXiv paper is uploaded. Stay tuned for code release!
+
+## Environment Setup
