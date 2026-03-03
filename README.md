@@ -30,4 +30,39 @@
 - 10/25/2025: RAVEN was presented at IROS 2025 Active Perception Workshop, and received Oustanding Best Paper Award Finalist!
 - 09/28/2025: arXiv paper is uploaded. Stay tuned for code release!
 
+## Understanding code pipeline structure
+
+RayFronts serves as a perception and representation backbone of RAVEN. 
+
+AirStack serves as an aerial robot autonomy stack, which supports interface for Isaac Sim, and handles sensors, global & local planning, collision avoidance. 
+
+
+    +-------------+        Interface          +-------------------+        Sensor Topics       +-------------------+
+    |  Isaac Sim  | ----------------------->  |     AirStack      | -------------------------> |     RayFronts     |
+    | Simulation  |                           |  Autonomy Stack   |                            | Perception & Map  |
+    +-------------+                           |-------------------|                            |-------------------|
+                                              | - Sim interface   |                            | - 3D Mapping      |
+                                              | - Sensor drivers  |                            | - Representation  |
+                                              | - Global planner  | <------------------------- | - Semantic logic  |
+                                              | - Local planner   |      Global Waypoints      | - Behavior Tree   |
+                                              | - Collision avoid |                            |                   |
+                                              +-------------------+                            +-------------------+ 
+
 ## Environment Setup
+
+First, for RayFronts setup, please follow the instructions in: [RayFronts Setup](./RayFronts/README.md) 
+
+Next, for AirStack setup, please follow the instructions in: 
+
+## Run RAVEN
+In one terminal, start the RayFronts docker container
+
+    ./run_docker.sh
+Then, 
+
+    ./mapping_server_rosnode.sh
+
+On another terminal, start the AirStack with IsaacSim
+
+    xhost +
+    airstack up
