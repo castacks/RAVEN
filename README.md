@@ -37,16 +37,16 @@ RayFronts serves as a perception and representation backbone of RAVEN.
 AirStack serves as an aerial robot autonomy stack, which supports interface for Isaac Sim, and handles sensors, global & local planning, collision avoidance. 
 
 
-    +-------------+        Interface          +-------------------+        Sensor Topics       +-------------------+
-    |  Isaac Sim  | ----------------------->  |     AirStack      | -------------------------> |     RayFronts     |
-    | Simulation  |                           |  Autonomy Stack   |                            | Perception & Map  |
-    +-------------+                           |-------------------|                            |-------------------|
-                                              | - Sim interface   |                            | - 3D Mapping      |
-                                              | - Sensor drivers  |                            | - Representation  |
-                                              | - Global planner  | <------------------------- | - Semantic logic  |
-                                              | - Local planner   |      Global Waypoints      | - Behavior Tree   |
-                                              | - Collision avoid |                            |                   |
-                                              +-------------------+                            +-------------------+ 
+    +-------------+  Interface    +-------------------+    Sensor Topics    +-------------------+
+    |  Isaac Sim  | ----------->  |     AirStack      | ------------------> |     RayFronts     |
+    | Simulation  |               |  Autonomy Stack   |                     | Perception & Map  |
+    +-------------+               |-------------------|                     |-------------------|
+                                  | - Sim interface   |                     | - 3D Mapping      |
+                                  | - Sensor drivers  |                     | - Representation  |
+                                  | - Global planner  | <-------------------| - Semantic logic  |
+                                  | - Local planner   |   Global Waypoints  | - Behavior Tree   |
+                                  | - Collision avoid |                     |                   |
+                                  +-------------------+                     +-------------------+ 
 
 ## Environment Setup
 
