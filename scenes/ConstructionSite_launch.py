@@ -28,7 +28,7 @@ NUCLEUS_SERVER = "airlab-nucleus.andrew.cmu.edu"
 
 #env/stage path and scale
 ENV_URL = "/isaac-sim/AirStack/scenes/ConstructionSiteExport.usd"
-STAGE_SCALE = 1.0
+STAGE_SCALE = 0.01
 
 # Use ~ so os.path.expanduser resolves correctly inside the container (HOME=/isaac-sim)
 DRONE_USD = "~/.local/share/ov/data/documents/Kit/shared/exts/pegasus.simulator/pegasus/simulator/assets/Robots/Iris/iris.usd"
