@@ -27,7 +27,7 @@
 
 ## News/Release
 - 01/31/2026: RAVEN was accepted to IEEE ICRA 2026!
-- 10/25/2025: RAVEN was presented at IROS 2025 Active Perception Workshop, and received Oustanding Best Paper Award Finalist!
+- 10/25/2025: RAVEN was presented at IROS 2025 Active Perception Workshop, and received Outstanding Best Paper Award Finalist!
 - 09/28/2025: arXiv paper is uploaded. Stay tuned for code release!
 
 ## Understanding code pipeline structure
@@ -50,7 +50,7 @@ AirStack serves as an aerial robot autonomy stack, which supports interface for 
 
 ## Environment Setup
 
-First, for RayFronts setup, please follow the instructions in: [RayFronts Setup](./RayFronts/README.md) 
+First, for RayFronts setup, please follow the instructions in: [RayFronts Setup](https://github.com/seungchan-kim/RayFronts/blob/raven/README.md)
 
 Next, for AirStack setup, please follow the instructions in: 
 
