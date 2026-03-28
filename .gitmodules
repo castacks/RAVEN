@@ -1,3 +1,7 @@
+[submodule "AirStack"]
+	path = AirStack
+	url = https://github.com/castacks/AirStack.git
+
 [submodule "RayFronts"]
 	path = RayFronts
 	url = https://github.com/seungchan-kim/RayFronts.git
