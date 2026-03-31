@@ -48,11 +48,18 @@ AirStack serves as an aerial robot autonomy stack, which supports interface for 
                                   | - Collision avoid |                     |                   |
                                   +-------------------+                     +-------------------+ 
 
-## Environment Setup
+## Setup
 
-First, for RayFronts setup, please follow the instructions in: [RayFronts Setup](https://github.com/seungchan-kim/RayFronts/blob/raven/README.md)
+First, clone this repository.
 
-Next, for AirStack setup, please follow the instructions in: 
+    git clone --recurse-submodules https://github.com/castacks/RAVEN.git
+    cd RAVEN
+    git checkout main
+    git submodule update --init --recursive
+
+Next, you should set up a docker image for RayFronts. Please follow the instructions in: [RayFronts Setup](https://github.com/seungchan-kim/RayFronts/blob/raven/README.md)
+
+Now, for AirStack setup, please follow the instructions in: [AirStack Setup](https://github.com/castacks/AirStack/blob/raven/docs/README.md)
 
 ## Run RAVEN
 In one terminal, start the RayFronts docker container
