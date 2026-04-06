@@ -90,6 +90,18 @@ To shut down the AirStack containers and remove them:
 
     airstack down
 
+
+#### Trying different environments
+
+By default, the robot will launch `Fire Academy` scene. If you want to try different scenes, find the `.env` file in `~/RAVEN/AirStack`, and modify the `ISAAC_SIM_SCRIPT_NAME` to different options. We are currently supporting: 
+
+    FireAcademy_Launch.py
+    RetroNeighborhood_Launch.py
+    AbandonedFactory_Launch.py
+    ConstructionSite_Launch.py
+
+Make sure you downloaded these scenes during the setup. All scenes should be inside `~/RAVEN/AirStack/scenes`. 
+
 ### Starting RayFronts
 
 On another terminal, start the RayFronts docker container:
