@@ -67,14 +67,36 @@ After setting up AirStack, download scenes:
     ./download_scenes.sh
 
 ## Run RAVEN
-In one terminal, start the RayFronts docker container:
 
+### Starting AirStack
+
+In one terminal, start the AirStack with IsaacSim:
+
+    cd ~/RAVEN/AirStack
+    xhost + (This is needed only when you rebooted your computer)
+    airstack up
+
+This will start Isaac-Sim, RViz and RQT-GUI.
+
+First, click the play button in Isaac Sim. 
+
+Then hit the `Arm and Takeoff` button on the RQT-GUI. The robot will start taking off. 
+
+(If you click `Fixed Trajectory` and `Publish` buttons, the robot will fly according to the predefined trajectory on the right configurations. We will not use this for RAVEN.)
+
+Hit the `Global Plan` button. The robot will fly following a global waypoint plan. By default, AirStack generates random walk plans. For our purpose, RayFronts will continuously generate a semantic global plan and will overwrite it. 
+
+To shut down the AirStack containers and remove them:
+
+    airstack down
+
+### Starting RayFronts
+
+On another terminal, start the RayFronts docker container:
+
+    cd ~/RAVEN/RayFronts
     ./run_docker.sh
-Then, 
+
+Then, inside the RayFronts docker container, 
 
     ./mapping_server_rosnode.sh
-
-On another terminal, start the AirStack with IsaacSim:
-
-    xhost +
-    airstack up
