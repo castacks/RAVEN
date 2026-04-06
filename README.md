@@ -57,19 +57,24 @@ First, clone this repository.
     git checkout main
     git submodule update --init --recursive
 
-Next, you should set up a docker image for RayFronts. Please follow the instructions in: [RayFronts Setup](https://github.com/seungchan-kim/RayFronts/blob/raven/README.md)
+Next, you should set up a docker image for RayFronts. Please follow the instructions in: [RayFronts Setup](https://github.com/seungchan-kim/RayFronts/blob/raven/README.md).
 
-Now, for AirStack setup, please follow the instructions in: [AirStack Setup](https://github.com/castacks/AirStack/blob/raven/docs/README.md)
+Now, for AirStack setup, please follow the instructions in: [AirStack Setup](https://github.com/castacks/AirStack/blob/raven/docs/README.md).
+
+After setting up AirStack, download scenes: 
+
+    cd ~/RAVEN/AirStack/scenes
+    ./download_scenes.sh
 
 ## Run RAVEN
-In one terminal, start the RayFronts docker container
+In one terminal, start the RayFronts docker container:
 
     ./run_docker.sh
 Then, 
 
     ./mapping_server_rosnode.sh
 
-On another terminal, start the AirStack with IsaacSim
+On another terminal, start the AirStack with IsaacSim:
 
     xhost +
     airstack up
