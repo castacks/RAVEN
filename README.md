@@ -25,6 +25,10 @@
   <h3 align="center"><a href="https://arxiv.org/pdf/2509.23563">Paper</a> | <a href="https://raven-semantic.github.io/">Project Page</a> | <a href="https://youtu.be/slLuZv3-zIs">Video</a></h3>
   <div align="center"></div>
 
+## Warning
+**🚧 Work in Progress**
+- This repository is under active development. The code is not yet ready for general use. We plan to release a stable version with full documentation and instructions soon. For questions, please open an issue or check back later for updates.
+
 ## News/Release
 - 01/31/2026: RAVEN was accepted to IEEE ICRA 2026!
 - 10/25/2025: RAVEN was presented at IROS 2025 Active Perception Workshop, and received Outstanding Best Paper Award Finalist!
