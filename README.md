@@ -134,4 +134,4 @@ On another terminal, start the RayFronts docker container:
 
 Then, inside the RayFronts docker container, 
 
-    ./mapping_server_rosnode.sh
+    ./run_mapping_server_rosnode.sh
