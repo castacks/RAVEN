@@ -80,6 +80,8 @@ In one terminal, start the AirStack with IsaacSim:
     xhost + (This is needed only when you rebooted your computer)
     airstack up
 
+An alternative command to `airstack up` is `docker compose up -d`.
+
 This will start Isaac-Sim, RViz and RQT-GUI.
 
 First, click the play button in Isaac Sim. 
@@ -94,6 +96,23 @@ To shut down the AirStack containers and remove them:
 
     airstack down
 
+, or equivalently, `docker compose down`. 
+
+#### Debugging running containers
+
+While running AirStack, you may want to inspect what is happening inside each Docker container. To enter the robot container:
+
+    docker exec -it airstack-robot-1 bash
+To enter the Isaac Sim container: 
+
+    docker exec -it isaac-sim bash
+Once inside the container, you can attach to the main session using tmux. 
+
+    tmux a
+To detach from tmux (without stopping processes): `Ctrl + B then D`. 
+
+Container names may vary depending on your docker-compose setup.  
+Use `docker ps` to list running containers.
 
 #### Trying different environments
 
