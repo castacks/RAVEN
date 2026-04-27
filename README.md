@@ -109,7 +109,7 @@ Then, inside the RayFronts docker container,
 
     ./run_mapping_server_rosnode.sh
 
-#### Checking if RayFronts mapper is working:
+#### Checking if RayFronts mapper is loading intrinsics:
 
 You will see the following log messages (make sure to press the Play button in Isaac Sim):  
 
@@ -117,9 +117,13 @@ You will see the following log messages (make sure to press the Play button in I
     [rayfronts.datasets.ros][INFO] - Loaded intrinsics:
     ....
     [rayfronts.datasets.ros][INFO] - Ros2Subscriber initialized successfully.
-If intrinsics is not loaded, check the [intrinsics topic in the configuration file](https://github.com/seungchan-kim/RayFronts/blob/cd5f9abfc773ed12e3be0697434cb1c25af7820c/rayfronts/configs/dataset/ros2isaacsim.yaml#L17). 
+If intrinsics is not loaded, check the [intrinsics topic in the configuration file](https://github.com/seungchan-kim/RayFronts/blob/cd5f9abfc773ed12e3be0697434cb1c25af7820c/rayfronts/configs/dataset/ros2isaacsim.yaml#L17), and verify that the expected ROS2 topics are being published:
 
-If this is your first time running the command, pretrained models (e.g., radio-v2.5-l_half.pth.tar, open_clip_model.safetensors) will be automatically downloaded from external sources such as Torch Hub and Hugging Face. To avoid re-downloading on every fresh container startup, we recommend caching these files in the Docker image. For example, 
+    ros2 topic echo /robot_1/sensors/front_stereo/left/camera_info
+
+#### Caching pretrained models inside the Docker image:
+
+If this is your first time running the command, pretrained models will be automatically downloaded from external sources such as Torch Hub and Hugging Face. To avoid re-downloading on every fresh container startup, we recommend caching these files in the Docker image. For example, 
 
     docker commit <container_id> rayfronts:desktop
 
