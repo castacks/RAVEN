@@ -129,6 +129,15 @@ If this is your first time running the command, pretrained models will be automa
 
 This will cache the pretrained models inside the existing rayfronts Docker image. 
 
+#### Checking if RayFronts mapper is running correctly:
+If you see log messages reporting mapping speed / efficiency similar to the example below, the RayFronts mapper is running correctly:
+
+
+    [__main__][INFO] - [#   0#] Wall (#77462.1434# ms/batch - #  0.01# frame/s), Mapping (#369.3345# ms/batch - #  2.71# frame/s), Mapping/Wall (#0.4768%)
+    [__main__][INFO] - [#   1#] Wall (#284.1268# ms/batch - #  3.52# frame/s), Mapping (#17.1590# ms/batch - # 58.28# frame/s), Mapping/Wall (#6.0392%)
+    [__main__][INFO] - [#   2#] Wall (#797.8671# ms/batch - #  1.25# frame/s), Mapping (#13.3219# ms/batch - # 75.06# frame/s), Mapping/Wall (#1.6697%)
+    .... 
+
 ### Miscellaneous
 
 #### Debugging running containers
