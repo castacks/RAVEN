@@ -72,7 +72,7 @@ After setting up AirStack, download scenes:
 
 ## Run RAVEN
 
-### Starting AirStack
+### Starting AirStack (Terminal 1)
 
 In one terminal, start the AirStack with IsaacSim:
 
@@ -97,6 +97,19 @@ To shut down the AirStack containers and remove them:
     airstack down
 
 , or equivalently, `docker compose down`. 
+
+### Starting RayFronts (Terminal 2)
+
+On another terminal, start the RayFronts docker container:
+
+    cd ~/RAVEN/RayFronts
+    ./run_docker.sh
+
+Then, inside the RayFronts docker container, 
+
+    ./run_mapping_server_rosnode.sh
+
+### Miscellaneous
 
 #### Debugging running containers
 
@@ -124,14 +137,3 @@ By default, the robot will launch `Fire Academy` scene. If you want to try diffe
     ConstructionSite_Launch.py
 
 Make sure you downloaded these scenes during the setup. All scenes should be inside `~/RAVEN/AirStack/scenes`. 
-
-### Starting RayFronts
-
-On another terminal, start the RayFronts docker container:
-
-    cd ~/RAVEN/RayFronts
-    ./run_docker.sh
-
-Then, inside the RayFronts docker container, 
-
-    ./run_mapping_server_rosnode.sh
