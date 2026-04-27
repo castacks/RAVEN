@@ -92,11 +92,11 @@ Then hit the `Arm and Takeoff` button on the RQT-GUI. The robot will start takin
 
 Hit the `Global Plan` button. The robot will fly following a global waypoint plan. By default, AirStack generates random walk plans. For our purpose, RayFronts will continuously generate a semantic global plan and will overwrite it. 
 
-To shut down the AirStack containers and remove them:
+To shut down the AirStack containers and remove them, run:
 
     airstack down
 
-, or equivalently, `docker compose down`. 
+, or equivalently, `docker compose down` (in `~/RAVEN/AirStack`).
 
 ### Starting RayFronts (Terminal 2)
 
