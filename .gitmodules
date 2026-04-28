@@ -6,3 +6,6 @@
 	path = RayFronts
 	url = https://github.com/seungchan-kim/RayFronts.git
 	branch = raven
+[submodule "LVLM"]
+	path = LVLM
+	url = https://github.com/seungchan-kim/LVLM.git
