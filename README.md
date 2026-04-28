@@ -70,6 +70,8 @@ After setting up AirStack, download scenes:
     cd ~/RAVEN/AirStack/scenes
     ./download_scenes.sh
 
+**[Optional]** For LVLM-guided behavior and FPV+LVLM baselines, you need set up LVLM as well. Please follow the instructions in: [LVLM Setup](https://github.com/seungchan-kim/LVLM/blob/main/README.md).
+
 ## Run RAVEN
 
 ### Starting AirStack (Terminal 1)
