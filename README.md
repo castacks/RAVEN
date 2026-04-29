@@ -162,6 +162,21 @@ To set a new input prompt, type `1` and enter your text.
 To update the input, you can first clear it with `2`, then set a new one using `1`.  
 To exit the program, type `3`.
 
+## Environments
+
+### Trying Different Environments
+
+By default, the robot launches the `Fire Academy` scene. To switch to other environments, locate the `.env` file in `~/RAVEN/AirStack` and update `ISAAC_SIM_SCRIPT_NAME`. 
+
+We are currently supporting: 
+
+    FireAcademy_Launch.py
+    RetroNeighborhood_Launch.py
+    AbandonedFactory_Launch.py
+    ConstructionSite_Launch.py
+
+Make sure these scenes were downloaded during the setup process. All scene files should be located in `~/RAVEN/AirStack/scenes`. 
+
 ### Miscellaneous
 
 #### Debugging running containers
@@ -179,14 +194,3 @@ To detach from tmux (without stopping processes): `Ctrl + B then D`.
 
 Container names may vary depending on your docker-compose setup.  
 Use `docker ps` to list running containers.
-
-#### Trying different environments
-
-By default, the robot will launch `Fire Academy` scene. If you want to try different scenes, find the `.env` file in `~/RAVEN/AirStack`, and modify the `ISAAC_SIM_SCRIPT_NAME` to different options. We are currently supporting: 
-
-    FireAcademy_Launch.py
-    RetroNeighborhood_Launch.py
-    AbandonedFactory_Launch.py
-    ConstructionSite_Launch.py
-
-Make sure you downloaded these scenes during the setup. All scenes should be inside `~/RAVEN/AirStack/scenes`. 
