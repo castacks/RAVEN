@@ -140,6 +140,28 @@ If you see log messages reporting mapping speed / efficiency similar to the exam
     [__main__][INFO] - [#   2#] Wall (#797.8671# ms/batch - #  1.25# frame/s), Mapping (#13.3219# ms/batch - # 75.06# frame/s), Mapping/Wall (#1.6697%)
     .... 
 
+### Input Prompts (Terminal 3)
+
+Once the RayFronts container is running, open another terminal and enter the container:
+
+    docker exec -it rayfronts_container bash
+
+Then run: 
+
+    python3 input_prompt.py
+
+You will see the following interface:
+
+    === Input Publisher ===
+    Current input: ''
+    1. Set new input
+    2. Clear input
+    3. Exit
+
+To set a new input prompt, type `1` and enter your text.  
+To update the input, you can first clear it with `2`, then set a new one using `1`.  
+To exit the program, type `3`.
+
 ### Miscellaneous
 
 #### Debugging running containers
