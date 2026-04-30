@@ -74,7 +74,50 @@ After setting up AirStack, download scenes:
 
 ## Run RAVEN
 
-### Starting AirStack (Terminal 1)
+RAVEN can be started in two ways — choose whichever fits your workflow.
+
+### Option A: Quick Start (Recommended)
+
+A single script launches all components in a [tmux](https://github.com/tmux/tmux) session, with one window per component. Requires `tmux` (`sudo apt install tmux`).
+
+    cd ~/RAVEN
+    xhost +  (only needed after a reboot)
+    ./launch_raven.sh
+
+For LVLM-guided behavior or FPV+LVLM baselines, add the `--lvlm` flag:
+
+    ./launch_raven.sh --lvlm
+
+This opens a tmux session with the following windows:
+
+| Window | Component | Description |
+|--------|-----------|-------------|
+| `airstack` | AirStack + Isaac Sim | Simulation and autonomy stack |
+| `rayfronts` | RayFronts mapper | Perception and semantic mapping |
+| `input` | Input prompt | Text prompt interface (auto-starts once RayFronts is ready) |
+| `lvlm` | LVLM (optional) | Only with `--lvlm` flag |
+| `stop` | Stop | Pre-loaded shutdown command |
+
+Switch between windows with `Ctrl+B` then the window number (e.g. `Ctrl+B 1` for `rayfronts`).  
+Detach from the session with `Ctrl+B D` — all processes keep running.  
+Re-attach anytime with `tmux attach -t raven`.
+
+**GUI steps** (still required after launch):
+1. Click **Play** in Isaac Sim
+2. Click **Arm and Takeoff** in the RQT-GUI
+3. Click **Global Plan** in the RQT-GUI
+
+**To stop everything**, switch to the `stop` window and press `Enter`. This stops all containers and closes the tmux session.
+
+> **First time only:** Pretrained models are downloaded automatically on first run. To avoid re-downloading on every fresh container startup, cache them into the Docker image after the first successful launch — see [Caching pretrained models](#caching-pretrained-models-inside-the-docker-image) in Option B.
+
+---
+
+### Option B: Manual (Multiple Terminals)
+
+For users who prefer full visibility into each component in separate terminals.
+
+#### Starting AirStack (Terminal 1)
 
 In one terminal, start the AirStack with IsaacSim:
 
@@ -94,13 +137,7 @@ Then hit the `Arm and Takeoff` button on the RQT-GUI. The robot will start takin
 
 Hit the `Global Plan` button. The robot will fly following a global waypoint plan. By default, AirStack generates random walk plans. For our purpose, RayFronts will continuously generate a semantic global plan and will overwrite it. 
 
-To shut down the AirStack containers and remove them, run:
-
-    airstack down
-
-, or equivalently, `docker compose down` (in `~/RAVEN/AirStack`).
-
-### Starting RayFronts (Terminal 2)
+#### Starting RayFronts (Terminal 2)
 
 On another terminal, start the RayFronts docker container:
 
@@ -111,7 +148,7 @@ Then, inside the RayFronts docker container,
 
     ./run_mapping_server_rosnode.sh
 
-#### Checking if RayFronts mapper is loading intrinsics:
+##### Checking if RayFronts mapper is loading intrinsics:
 
 You will see the following log messages (make sure to press the Play button in Isaac Sim):  
 
@@ -123,7 +160,7 @@ If intrinsics is not loaded, check the [intrinsics topic in the configuration fi
 
     ros2 topic echo /robot_1/sensors/front_stereo/left/camera_info
 
-#### Caching pretrained models inside the Docker image:
+##### Caching pretrained models inside the Docker image:
 
 If this is your first time running the command, pretrained models will be automatically downloaded from external sources such as Torch Hub and Hugging Face. To avoid re-downloading on every fresh container startup, we recommend caching these files in the Docker image. For example, 
 
@@ -131,7 +168,7 @@ If this is your first time running the command, pretrained models will be automa
 
 This will cache the pretrained models inside the existing rayfronts Docker image. 
 
-#### Checking if RayFronts mapper is running correctly:
+##### Checking if RayFronts mapper is running correctly:
 If you see log messages reporting mapping speed / efficiency similar to the example below, the RayFronts mapper is running correctly:
 
 
@@ -140,7 +177,7 @@ If you see log messages reporting mapping speed / efficiency similar to the exam
     [__main__][INFO] - [#   2#] Wall (#797.8671# ms/batch - #  1.25# frame/s), Mapping (#13.3219# ms/batch - # 75.06# frame/s), Mapping/Wall (#1.6697%)
     .... 
 
-### Input Prompts (Terminal 3)
+#### Input Prompts (Terminal 3)
 
 Once the RayFronts container is running, open another terminal and enter the container:
 
@@ -161,6 +198,15 @@ You will see the following interface:
 To set a new input prompt, type `1` and enter your text.  
 To update the input, you can first clear it with `2`, then set a new one using `1`.  
 To exit the program, type `3`.
+
+#### Stopping
+
+To shut down all components:
+
+    docker stop rayfronts_container
+    airstack down
+
+, or equivalently, `docker compose down` (in `~/RAVEN/AirStack`).
 
 ## Environments
 
