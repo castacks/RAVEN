@@ -81,7 +81,6 @@ RAVEN can be started in two ways — choose whichever fits your workflow.
 A single script launches all components in a [tmux](https://github.com/tmux/tmux) session, with one window per component. Requires `tmux` (`sudo apt install tmux`).
 
     cd ~/RAVEN
-    xhost +  (only needed after a reboot)
     ./launch_raven.sh
 
 For LVLM-guided behavior or FPV+LVLM baselines, add the `--lvlm` flag:
@@ -98,7 +97,7 @@ This opens a tmux session with the following windows:
 | `lvlm` | LVLM (optional) | Only with `--lvlm` flag |
 | `stop` | Stop | Pre-loaded shutdown command |
 
-Switch between windows with `Ctrl+B` then the window number (e.g. `Ctrl+B 1` for `rayfronts`).  
+The session opens on the `input` window by default. Switch between windows with `Ctrl+B` then the window number (e.g. `Ctrl+B 1` for `rayfronts`).  
 Detach from the session with `Ctrl+B D` — all processes keep running.  
 Re-attach anytime with `tmux attach -t raven`.
 
@@ -122,10 +121,9 @@ For users who prefer full visibility into each component in separate terminals.
 In one terminal, start the AirStack with IsaacSim:
 
     cd ~/RAVEN/AirStack
-    xhost + (This is needed only when you rebooted your computer)
     airstack up
 
-An alternative command to `airstack up` is `docker compose up -d`.
+An alternative command to `airstack up` is `docker compose up -d`. If using `docker compose up -d`, run `xhost +` first after a reboot — `airstack up` handles this automatically.
 
 This will start Isaac-Sim, RViz and RQT-GUI.
 

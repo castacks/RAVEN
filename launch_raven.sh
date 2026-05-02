@@ -18,7 +18,7 @@ tmux kill-session -t "$SESSION" 2>/dev/null || true
 
 # Window 1: AirStack + Isaac Sim
 tmux new-session -d -s "$SESSION" -n "airstack"
-tmux send-keys -t "$SESSION:airstack" "cd $RAVEN/AirStack && docker compose up" Enter
+tmux send-keys -t "$SESSION:airstack" "cd $RAVEN/AirStack && airstack up" Enter
 
 # Window 2: RayFronts — start container and run mapping server directly (no manual shell step)
 tmux new-window -t "$SESSION" -n "rayfronts"
@@ -38,5 +38,5 @@ fi
 tmux new-window -t "$SESSION" -n "stop"
 tmux send-keys -t "$SESSION:stop" "$RAVEN/stop_raven.sh"
 
-tmux select-window -t "$SESSION:airstack"
+tmux select-window -t "$SESSION:input"
 tmux attach -t "$SESSION"
