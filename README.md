@@ -199,12 +199,16 @@ To exit the program, type `3`.
 
 #### Stopping
 
-To shut down all components:
+To shut down AirStack, run the following in any terminal inside `~/RAVEN/AirStack`:
 
-    docker stop rayfronts_container
     airstack down
 
-, or equivalently, `docker compose down` (in `~/RAVEN/AirStack`).
+`airstack down` is equivalent to `docker compose down`.
+
+To stop RayFronts, run the following:
+
+    docker stop rayfronts_container
+
 
 ## Environments
 
