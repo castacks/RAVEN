@@ -94,6 +94,7 @@ This opens a tmux session with the following windows:
 | `airstack` | AirStack + Isaac Sim | Simulation and autonomy stack |
 | `rayfronts` | RayFronts mapper | Perception and semantic mapping |
 | `input` | Input prompt | Text prompt interface (auto-starts once RayFronts is ready) |
+| `annotation_viz` | Annotation visualizer | Publishes all ground-truth bounding boxes to `/annotation_bboxes_all` in RViz |
 | `lvlm` | LVLM (optional) | Only with `--lvlm` flag |
 | `stop` | Stop | Pre-loaded shutdown command |
 
