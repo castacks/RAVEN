@@ -92,6 +92,9 @@ Supported values: `FireAcademy`, `RetroNeighborhood` (default), `AbandonedFactor
 To override the drone's initial position and orientation, use `--x`, `--y`, `--z`, `--qx`, `--qy`, `--qz`, `--qw`:
 
     ./launch_raven.sh --env FireAcademy --x 25.7 --y 11.5 --z 0.07
+    ./launch_raven.sh --env AbandonedFactory --x 7.57 --y -5.5 --z 0.71 --qx 0.0 --qy 0.0 --qz 0.0 --qw 1.0
+
+If not specified, each environment uses its own default pose (defined in `launch_raven.sh`).
 
 For LVLM-guided behavior or FPV+LVLM baselines, add the `--lvlm` flag:
 
@@ -123,6 +126,23 @@ Re-attach anytime with `tmux attach -t raven`.
 
 ---
 
+## Environments
+
+### Trying Different Environments
+
+By default, the robot launches the `RetroNeighborhood` scene. To switch environments, pass `--env <name>` to `launch_raven.sh` (see [Quick Start](#option-a-quick-start-recommended)).
+
+We are currently supporting:
+
+    FireAcademy
+    RetroNeighborhood
+    AbandonedFactory
+    ConstructionSite
+
+Make sure these scenes were downloaded during the setup process. All scene files should be located in `~/RAVEN/AirStack/scenes`. 
+
+---
+
 ### Option B: Manual (Multiple Terminals)
 
 For users who prefer full visibility into each component in separate terminals.
@@ -135,6 +155,15 @@ In one terminal, start the AirStack with IsaacSim:
     airstack up
 
 An alternative command to `airstack up` is `docker compose up -d`. If using `docker compose up -d`, run `xhost +` first after a reboot — `airstack up` handles this automatically.
+
+To select a different environment, edit `ISAAC_SIM_SCRIPT_NAME` in `~/RAVEN/AirStack/.env`:
+
+    ISAAC_SIM_SCRIPT_NAME="FireAcademy_Launch.py"
+
+Each scene script has its own default drone pose built in. To override the pose, export the variables before running `airstack up`:
+
+    export DRONE_X=7.57 DRONE_Y=-5.5 DRONE_Z=0.71
+    airstack up
 
 This will start Isaac-Sim, RViz and RQT-GUI.
 
@@ -208,6 +237,18 @@ To set a new input prompt, type `1` and enter your text.
 To update the input, you can first clear it with `2`, then set a new one using `1`.  
 To exit the program, type `3`.
 
+#### Annotation Visualizer (Terminal 4)
+
+Open another terminal and enter the RayFronts container:
+
+    docker exec -it rayfronts_container bash
+
+Then run:
+
+    cd /workspace/RayFronts && python3 annotation_viz.py
+
+This publishes all ground-truth bounding boxes to `/annotation_bboxes_all` in RViz.
+
 #### Stopping
 
 To shut down AirStack, run the following in any terminal inside `~/RAVEN/AirStack`:
@@ -220,21 +261,6 @@ To stop RayFronts, run the following:
 
     docker stop rayfronts_container
 
-
-## Environments
-
-### Trying Different Environments
-
-By default, the robot launches the `RetroNeighborhood` scene. To switch environments, pass `--env <name>` to `launch_raven.sh` (see [Quick Start](#option-a-quick-start-recommended)).
-
-We are currently supporting:
-
-    FireAcademy
-    RetroNeighborhood
-    AbandonedFactory
-    ConstructionSite
-
-Make sure these scenes were downloaded during the setup process. All scene files should be located in `~/RAVEN/AirStack/scenes`. 
 
 ### Miscellaneous
 
