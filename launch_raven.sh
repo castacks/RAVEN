@@ -1,5 +1,8 @@
 #!/bin/bash
 
+RAVEN="$HOME/RAVEN"
+set -a; source "$RAVEN/AirStack/.env"; set +a
+
 LVLM=false
 ENV_NAME="RetroNeighborhood"
 DRONE_X=""; DRONE_Y=""; DRONE_Z=""
@@ -42,10 +45,7 @@ esac
 ISAAC_SIM_SCRIPT_NAME="${ENV_NAME}_Launch.py"
 
 SESSION="raven"
-RAVEN="$HOME/RAVEN"
 
-# Source .env for other AirStack vars, then re-assert CLI values on top
-set -a; source "$RAVEN/AirStack/.env"; set +a
 export DRONE_X DRONE_Y DRONE_Z DRONE_QX DRONE_QY DRONE_QZ DRONE_QW ISAAC_SIM_SCRIPT_NAME
 
 if ! command -v tmux &>/dev/null; then
