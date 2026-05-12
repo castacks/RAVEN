@@ -83,6 +83,16 @@ A single script launches all components in a [tmux](https://github.com/tmux/tmux
     cd ~/RAVEN
     ./launch_raven.sh
 
+To select a different environment, pass `--env`:
+
+    ./launch_raven.sh --env FireAcademy
+
+Supported values: `FireAcademy`, `RetroNeighborhood` (default), `AbandonedFactory`, `ConstructionSite`.
+
+To override the drone's initial position and orientation, use `--x`, `--y`, `--z`, `--qx`, `--qy`, `--qz`, `--qw`:
+
+    ./launch_raven.sh --env FireAcademy --x 25.7 --y 11.5 --z 0.07
+
 For LVLM-guided behavior or FPV+LVLM baselines, add the `--lvlm` flag:
 
     ./launch_raven.sh --lvlm
@@ -215,14 +225,14 @@ To stop RayFronts, run the following:
 
 ### Trying Different Environments
 
-By default, the robot launches the `Fire Academy` scene. To switch to other environments, locate the `.env` file in `~/RAVEN/AirStack` and update `ISAAC_SIM_SCRIPT_NAME`. 
+By default, the robot launches the `RetroNeighborhood` scene. To switch environments, pass `--env <name>` to `launch_raven.sh` (see [Quick Start](#option-a-quick-start-recommended)).
 
-We are currently supporting: 
+We are currently supporting:
 
-    FireAcademy_Launch.py
-    RetroNeighborhood_Launch.py
-    AbandonedFactory_Launch.py
-    ConstructionSite_Launch.py
+    FireAcademy
+    RetroNeighborhood
+    AbandonedFactory
+    ConstructionSite
 
 Make sure these scenes were downloaded during the setup process. All scene files should be located in `~/RAVEN/AirStack/scenes`. 
 
