@@ -4,26 +4,51 @@
     IEEE International Conference on Robotics and Automation (ICRA) 2026
 </h3>
 <p align="center">
-    <a href="https://seungchan-kim.github.io" target="_blank"><strong>Seungchan Kim</strong></a>
+    <a href="https://seungchan-kim.github.io" target="_blank"><strong>Seungchan Kim</strong></a><sup>1</sup>
     ·
-    <a href="https://oasisartisan.github.io" target="_blank"><strong>Omar Alama</strong></a>
+    <a href="https://oasisartisan.github.io" target="_blank"><strong>Omar Alama</strong></a><sup>1</sup>
     ·
-    <a href="https://scholar.google.com/citations?user=91gM0vQAAAAJ&hl=en&oi=ao"><strong>Dmytro Kurdydyk</strong></a>
+    <a href="https://scholar.google.com/citations?user=91gM0vQAAAAJ&hl=en&oi=ao"><strong>Dmytro Kurdydyk</strong></a><sup>2</sup>
     ·
-    <a href="https://theairlab.org/team/johnk/"><strong>John Keller</strong></a>
+    <a href="https://theairlab.org/team/johnk/"><strong>John Keller</strong></a><sup>1</sup>
     <br>
-    <a href="https://nik-v9.github.io/" target="_blank"><strong>Nikhil Keetha</strong></a>
+    <a href="https://nik-v9.github.io/" target="_blank"><strong>Nikhil Keetha</strong></a><sup>1</sup>
     ·
-    <a href="https://theairlab.org/team/wenshan/" target="_blank"><strong>Wenshan Wang</strong></a>
+    <a href="https://theairlab.org/team/wenshan/" target="_blank"><strong>Wenshan Wang</strong></a><sup>1</sup>
     ·
-    <a href="https://talkingtorobots.com/yonatanbisk.html" target="_blank"><strong>Yonatan Bisk</strong></a>
+    <a href="https://talkingtorobots.com/yonatanbisk.html" target="_blank"><strong>Yonatan Bisk</strong></a><sup>1</sup>
     ·
-    <a href="https://theairlab.org/team/sebastian/" target="_blank"><strong>Sebastian Scherer</strong></a>
+    <a href="https://theairlab.org/team/sebastian/" target="_blank"><strong>Sebastian Scherer</strong></a><sup>1</sup>
     <br>
+    <sup>1</sup>Carnegie Mellon University &nbsp;&nbsp; <sup>2</sup>Davidson College
   </p>
 </p>
   <h3 align="center"><a href="https://arxiv.org/pdf/2509.23563">Paper</a> | <a href="https://raven-semantic.github.io/">Project Page</a> | <a href="https://youtu.be/slLuZv3-zIs">Video</a></h3>
   <div align="center"></div>
+<p align="center">
+  <img src="figs/raven-intro.png" alt="RAVEN Overview" width="100%">
+</p>
+
+## Citation
+
+If you find this work useful, please consider citing our work:
+
+```bibtex
+@article{kim2025raven,
+  title={RAVEN: Resilient Aerial Navigation via Open-Set Semantic Memory and Behavior Adaptation},
+  author={Kim, Seungchan and Alama, Omar and Kurdydyk, Dmytro and Keller, John and Keetha, Nikhil and Wang, Wenshan and Bisk, Yonatan and Scherer, Sebastian},
+  journal={arXiv preprint arXiv:2509.23563},
+  year={2025}
+}
+```
+
+## Table of Contents
+
+- [News/Release](#newsrelease)
+- [Understanding Code Pipeline Structure](#understanding-code-pipeline-structure)
+- [Setup](#setup)
+- [Run RAVEN](#run-raven)
+- [Environments](#environments)
 
 ## Warning
 **🚧 Work in Progress**
@@ -34,7 +59,7 @@
 - 10/25/2025: RAVEN was presented at IROS 2025 Active Perception Workshop, and received Outstanding Best Paper Award Finalist!
 - 09/28/2025: arXiv paper is uploaded. Stay tuned for code release!
 
-## Understanding code pipeline structure
+## Understanding Code Pipeline Structure
 
 RayFronts serves as a perception and representation backbone of RAVEN. 
 
@@ -122,28 +147,14 @@ Re-attach anytime with `tmux attach -t raven`.
 
 **To stop everything**, switch to the `stop` window and press `Enter`. This stops all containers and closes the tmux session.
 
-> **First time only:** Pretrained models are downloaded automatically on first run. To avoid re-downloading on every fresh container startup, cache them into the Docker image after the first successful launch — see [Caching pretrained models](#caching-pretrained-models-inside-the-docker-image) in Option B.
-
----
-
-## Environments
-
-### Trying Different Environments
-
-By default, the robot launches the `RetroNeighborhood` scene. To switch environments, pass `--env <name>` to `launch_raven.sh` (see [Quick Start](#option-a-quick-start-recommended)).
-
-We are currently supporting:
-
-    FireAcademy
-    RetroNeighborhood
-    AbandonedFactory
-    ConstructionSite
-
-Make sure these scenes were downloaded during the setup process. All scene files should be located in `~/RAVEN/AirStack/scenes`. 
+> **First time only:** Pretrained models are downloaded automatically on first run. To avoid re-downloading on every fresh container startup, cache them into the Docker image after the first successful launch — see [Option B](#option-b-manual-multiple-terminals) below (expand → Caching pretrained models).
 
 ---
 
 ### Option B: Manual (Multiple Terminals)
+
+<details>
+<summary>Expand for full instructions</summary>
 
 For users who prefer full visibility into each component in separate terminals.
 
@@ -261,10 +272,26 @@ To stop RayFronts, run the following:
 
     docker stop rayfronts_container
 
+</details>
 
-### Miscellaneous
+## Environments
 
-#### Debugging running containers
+### Trying Different Environments
+
+By default, the robot launches the `RetroNeighborhood` scene. To switch environments, pass `--env <name>` to `launch_raven.sh` (see [Quick Start](#option-a-quick-start-recommended)).
+
+We are currently supporting:
+
+    FireAcademy
+    RetroNeighborhood
+    AbandonedFactory
+    ConstructionSite
+
+Make sure these scenes were downloaded during the setup process. All scene files should be located in `~/RAVEN/AirStack/scenes`.
+
+## Miscellaneous
+
+### Debugging running containers
 
 While running AirStack, you may want to inspect what is happening inside each Docker container. To enter the robot container:
 
