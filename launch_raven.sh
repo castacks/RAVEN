@@ -36,6 +36,18 @@ case $ENV_NAME in
     DRONE_X=${DRONE_X:-7.57};  DRONE_Y=${DRONE_Y:--5.5};  DRONE_Z=${DRONE_Z:-0.71}
     DRONE_QX=${DRONE_QX:-0.0}; DRONE_QY=${DRONE_QY:-0.0}
     DRONE_QZ=${DRONE_QZ:-0.0}; DRONE_QW=${DRONE_QW:-1.0};;
+  ModernCityDowntown)
+    DRONE_X=${DRONE_X:-0.0};   DRONE_Y=${DRONE_Y:--10.0}; DRONE_Z=${DRONE_Z:-0.3}
+    DRONE_QX=${DRONE_QX:-0.0}; DRONE_QY=${DRONE_QY:-0.0}
+    DRONE_QZ=${DRONE_QZ:-0.0}; DRONE_QW=${DRONE_QW:-1.0};;
+  AbandonedCity)
+    DRONE_X=${DRONE_X:-0.0};   DRONE_Y=${DRONE_Y:-0.0};   DRONE_Z=${DRONE_Z:-0.07}
+    DRONE_QX=${DRONE_QX:-0.0}; DRONE_QY=${DRONE_QY:-0.0}
+    DRONE_QZ=${DRONE_QZ:-0.0}; DRONE_QW=${DRONE_QW:-1.0};;
+  DowntownWest)
+    DRONE_X=${DRONE_X:-0.0};   DRONE_Y=${DRONE_Y:-0.0};   DRONE_Z=${DRONE_Z:-0.07}
+    DRONE_QX=${DRONE_QX:-0.0}; DRONE_QY=${DRONE_QY:-0.0}
+    DRONE_QZ=${DRONE_QZ:-0.0}; DRONE_QW=${DRONE_QW:-1.0};;
   *)
     DRONE_X=${DRONE_X:-0.0};   DRONE_Y=${DRONE_Y:-0.0};   DRONE_Z=${DRONE_Z:-0.07}
     DRONE_QX=${DRONE_QX:-0.0}; DRONE_QY=${DRONE_QY:-0.0}

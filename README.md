@@ -112,7 +112,7 @@ To select a different environment, pass `--env`:
 
     ./launch_raven.sh --env FireAcademy
 
-Supported values: `FireAcademy`, `RetroNeighborhood` (default), `AbandonedFactory`, `ConstructionSite`.
+Supported values: `FireAcademy`, `RetroNeighborhood` (default), `AbandonedFactory`, `ConstructionSite`, `AbandonedCity`, `DowntownWest`, `Shipyard`.
 
 To override the drone's initial position and orientation, use `--x`, `--y`, `--z`, `--qx`, `--qy`, `--qz`, `--qw`:
 
@@ -286,6 +286,9 @@ We are currently supporting:
     RetroNeighborhood
     AbandonedFactory
     ConstructionSite
+    AbandonedCity
+    Shipyard
+    DowntownWest
 
 Make sure these scenes were downloaded during the setup process. All scene files should be located in `~/RAVEN/AirStack/scenes`.
 
