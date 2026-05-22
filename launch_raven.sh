@@ -29,7 +29,7 @@ case $ENV_NAME in
     DRONE_QX=${DRONE_QX:-0.0}; DRONE_QY=${DRONE_QY:-0.0}
     DRONE_QZ=${DRONE_QZ:--0.93}; DRONE_QW=${DRONE_QW:-0.366};;
   ConstructionSite)
-    DRONE_X=${DRONE_X:-13.7};  DRONE_Y=${DRONE_Y:--1.2};  DRONE_Z=${DRONE_Z:-0.07}
+    DRONE_X=${DRONE_X:--30.0};  DRONE_Y=${DRONE_Y:--1.5};  DRONE_Z=${DRONE_Z:-0.07}
     DRONE_QX=${DRONE_QX:-0.0}; DRONE_QY=${DRONE_QY:-0.0}
     DRONE_QZ=${DRONE_QZ:-0.0}; DRONE_QW=${DRONE_QW:-1.0};;
   AbandonedFactory)
