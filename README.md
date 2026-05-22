@@ -50,10 +50,6 @@ If you find this work useful, please consider citing our work:
 - [Run RAVEN](#run-raven)
 - [Environments](#environments)
 
-## Warning
-**🚧 Work in Progress**
-- This repository is under active development. The code is not yet ready for general use. We plan to release a stable version with full documentation and instructions soon. For questions, please open an issue or check back later for updates.
-
 ## News/Release
 - 01/31/2026: RAVEN was accepted to IEEE ICRA 2026!
 - 10/25/2025: RAVEN was presented at IROS 2025 Active Perception Workshop, and received Outstanding Best Paper Award Finalist!
