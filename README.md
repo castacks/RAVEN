@@ -31,7 +31,7 @@
 
 ## Citation
 
-If you find this work useful, please consider citing our work:
+If you find this code, dataset, or paper useful, please consider citing our work:
 
 ```bibtex
 @article{kim2025raven,

@@ -83,7 +83,7 @@ tmux send-keys -t "$SESSION:annotation_viz" "echo 'Waiting for rayfronts_contain
 # Window 5 (optional): LVLM
 if $LVLM; then
   tmux new-window -t "$SESSION" -n "lvlm"
-  tmux send-keys -t "$SESSION:lvlm" "docker run -it --rm --name lvlm_container --gpus all --network host --ipc host --privileged --runtime=nvidia -e NVIDIA_DRIVER_CAPABILITIES=all -e ROS_DOMAIN_ID=1 -v $RAVEN/LVLM:/app -v $HOME/.cache/huggingface:/root/.cache/huggingface lvlm:latest" Enter
+  tmux send-keys -t "$SESSION:lvlm" "docker run -it --rm --name lvlm_container --gpus all --network host --ipc host --privileged --runtime=nvidia -e NVIDIA_DRIVER_CAPABILITIES=all -e ROS_DOMAIN_ID=1 -v $RAVEN/LVLM:/app -v $HOME/.cache/huggingface:/root/.cache/huggingface lvlm:latest bash -c 'cd /app && python3 internvl3.py'" Enter
 fi
 
 # Stop window — pre-loaded, user just hits Enter when ready to shut down
