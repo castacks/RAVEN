@@ -1,7 +1,9 @@
 <p align="center">
 <h1 align="center">RAVEN: Resilient Aerial Navigation via Open-Set Semantic Memory and Behavior Adaptation</h1>
 <h3 class="is-size-5 has-text-weight-bold" style="color: orange;" align="center">
-    IEEE International Conference on Robotics and Automation (ICRA) 2026 (Oral Presentation)
+    IEEE International Conference on Robotics and Automation (ICRA) 2026
+    <br>
+    (Oral Presentation)
 </h3>
 <p align="center">
     <a href="https://seungchan-kim.github.io" target="_blank"><strong>Seungchan Kim</strong></a><sup>1</sup>
