@@ -36,11 +36,13 @@
 If you find this code, dataset, or paper useful, please consider citing our work:
 
 ```bibtex
-@article{kim2025raven,
-  title={RAVEN: Resilient Aerial Navigation via Open-Set Semantic Memory and Behavior Adaptation},
+@inproceedings{kim2026raven,
+  title={Raven: Resilient aerial navigation via open-set semantic memory and behavior adaptation},
   author={Kim, Seungchan and Alama, Omar and Kurdydyk, Dmytro and Keller, John and Keetha, Nikhil and Wang, Wenshan and Bisk, Yonatan and Scherer, Sebastian},
-  journal={arXiv preprint arXiv:2509.23563},
-  year={2025}
+  booktitle={2026 IEEE International Conference on Robotics and Automation (ICRA)},
+  pages={3808--3815},
+  year={2026},
+  organization={IEEE}
 }
 ```
 
